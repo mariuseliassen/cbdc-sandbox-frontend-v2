@@ -6,7 +6,7 @@
 		"node": ">=16"
 	},
 	"scripts": {
-		"dev": "NODE_OPTIONS='--inspect' next dev",
+		"dev": "set NODE_OPTIONS='--inspect' && next dev",
 		"dev:3001": "next dev -p 3001",
 		"build": "next build",
 		"start": "next start",
@@ -17,7 +17,7 @@
 	},
 	"dependencies": {
 		"@nextui-org/react": "^1.0.0-beta.12",
-		"@symfoni/cbdc-sandbox-contracts-shared": "0.3.31",
+		"@symfoni/cbdc-sandbox-contracts-shared": "file:../cbdc-sandbox-contracts",
 		"@symfoni/vc-tools": "0.0.36",
 		"@types/debug": "^4.1.7",
 		"@veramo/core": "^4.0.0",
@@ -46,8 +46,10 @@
 		"sqlite3": "^5.1.2",
 		"sqljs": "^0.0.0-6",
 		"start-server-and-test": "^1.14.0",
+		"uint8arrays": "^3.1.1",
 		"wagmi": "^0.11.7",
-		"zustand": "^4.1.1"
+		"zustand": "^4.1.1",
+		"multiformats": "^9.9.0"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.27.0",
@@ -58,5 +60,17 @@
 		"eslint": "8.23.1",
 		"eslint-config-next": "12.3.0",
 		"typescript": "4.9.5"
+	},
+	"overrides": {
+		"did-jwt": {
+			"uint8arrays": "^3.1.1",
+			"multiformats": "^9.9.0"
+		},
+		"did-jwt-vc": {
+			"multiformats": "^9.9.0"
+		},
+		"ethr-did": {
+			"multiformats": "^9.9.0"
+		}
 	}
 }
